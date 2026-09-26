@@ -8,7 +8,7 @@ export default function Skills() {
           Skills
         </h2>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-7">
+        <div className="mt-8 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
           {Object.entries(site.skills).map(([group, items]) => (
             <div key={group}>
               <h3 className="inline-block border-b-2 border-lamp pb-1 text-sm text-muted">
@@ -18,7 +18,7 @@ export default function Skills() {
                 {items.map((skill) => (
                   <li
                     key={skill}
-                    className="glass rounded-full px-3 py-1.5 text-sm text-primary"
+                    className="glass rounded-full px-3 py-1 text-xs text-muted"
                   >
                     {skill}
                   </li>

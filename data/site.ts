@@ -1,12 +1,12 @@
 export const site = {
   name: "Karthik",
   title:
-    "Junior Computer Science student at The City College of New York (CCNY/CUNY), graduating May 2027",
+    "Senior Computer Science student at The City College of New York (CCNY/CUNY), graduating May 2027",
   oneLiner: "CS student focused on AI agents and full-stack development",
   links: {
     github: "https://github.com/b-karthikeya-reddy",
     linkedin: "https://www.linkedin.com/in/karthikeya-reddy-basavanagoudgari/",
-    email: "mailto:you@example.com", // placeholder — swap in your real email
+    email: "mailto:bkarthikeyareddy22@gmail.com", // placeholder — swap in your real email
     resume: "/resume.pdf",
   },
   photo: "/photo.png",
@@ -28,9 +28,9 @@ export const site = {
     ],
   },
   skills: {
-    Languages: ["Python", "JavaScript/TypeScript", "SQL"],
+    Languages: ["C++", "Python", "SQL", "JavaScript", "TypeScript"],
     Frontend: ["React", "Next.js", "Tailwind CSS"],
-    "Backend / Data": ["Supabase", "Postgres", "Flask"],
-    Tools: ["Git", "GitHub Actions", "Vercel"],
+    "Backend / Data": ["Flask", "Supabase", "Pandas", "NumPy", "OpenAI API"],
+    Tools: ["Git", "GitHub Actions", "Vercel",  "Jest", "VS Code"],
   },
 } as const;

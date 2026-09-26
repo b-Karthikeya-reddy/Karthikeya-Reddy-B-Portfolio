@@ -25,7 +25,7 @@ export const projects: Project[] = [
     status: "Live",
     repoUrl: "https://github.com/b-Karthikeya-reddy/Tutorly",
     liveUrl: "https://tutorly-puce.vercel.app",
-    video: "/demos/tutorly.mp4",
+    video: "/demos/Tutorly-demo.mp4",
   },
   {
     title: "BudgetBuddy",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     status: "Team Project",
     repoUrl: "https://github.com/b-Karthikeya-reddy/Budget-buddy",
     liveUrl: "https://budget-buddy021.vercel.app",
-    video: "/demos/budgetbuddy.mp4",
+    video: "/demos/BudgetBuddy-demo.mp4",
   },
   {
     title: "Benchmarking Multi-Agent Reinforcement Learning in AR",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     tech: ["Python", "PettingZoo", "Custom RL environments"],
     status: "In Progress",
     repoUrl: "https://github.com/b-Karthikeya-reddy/Marl-ar-benchmark",
-    video: "/demos/marl-ar.mp4",
+    video: "",
   },
   // add more projects here
   // {

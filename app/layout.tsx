@@ -3,8 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import Nav from "@/components/Nav";
 import Starfield from "@/components/Starfield";
 import AmbientToggle from "@/components/AmbientToggle";
-// The stylesheet is resolved by Next.js at build time.
-// @ts-expect-error The project's TypeScript configuration does not declare CSS modules.
+// @ts-expect-error Next.js resolves global CSS imports at build time.
 import "./globals.css";
 
 const inter = Inter({

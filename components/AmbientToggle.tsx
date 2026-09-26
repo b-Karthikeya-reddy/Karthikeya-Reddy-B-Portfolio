@@ -5,12 +5,43 @@ import { useEffect, useRef, useState } from "react";
 export default function AmbientToggle() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
+  const startedRef = useRef(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
     audio.volume = 0.25;
     audio.loop = true;
+  }, []);
+
+  // Browsers block audio with sound until the visitor interacts with the
+  // page at least once. Instead of requiring them to find/click this
+  // button specifically, start playback on their very first interaction
+  // anywhere on the page (click, scroll, or keypress) — whichever fires
+  // first. If they'd rather not have it on, the button still lets them
+  // pause it immediately after.
+  useEffect(() => {
+    const startOnFirstInteraction = async () => {
+      if (startedRef.current) return;
+      startedRef.current = true;
+      const audio = audioRef.current;
+      if (!audio) return;
+      try {
+        await audio.play();
+        setPlaying(true);
+      } catch {
+        // Autoplay still blocked for some reason — leave it for the
+        // manual toggle button instead.
+        startedRef.current = false;
+      }
+    };
+
+    const events: (keyof WindowEventMap)[] = ["click", "scroll", "keydown", "touchstart"];
+    events.forEach((e) => window.addEventListener(e, startOnFirstInteraction, { once: true }));
+
+    return () => {
+      events.forEach((e) => window.removeEventListener(e, startOnFirstInteraction));
+    };
   }, []);
 
   const toggle = async () => {
@@ -23,6 +54,7 @@ export default function AmbientToggle() {
       return;
     }
 
+    startedRef.current = true;
     try {
       await audio.play();
       setPlaying(true);
